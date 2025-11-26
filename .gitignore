@@ -1,0 +1,6 @@
+__pycache__/
+datapaths/
+*.so
+nsnd
+nsn.py
+nats-server

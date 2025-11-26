@@ -1,19 +1,19 @@
 # NATS example
 
-This example demonstrates how to use NATS messaging with a simple publisher and subscriber. The publisher sends messages to a NATS server, and the subscriber listens for those messages and processes them.
+This example shows a simple example that uses the NATS middleware, by creating a publisher and a subscriber. The publisher sends messages on a topic, and the subscriber echoes them back. The Round-Trip Time (RTT) is measured at the publisher side and printed on the console.
 
 ## 1. Installing and Running the NATS Server
 
-Download and install the NATS server package on one machine:
+Download and install the NATS server package on one VM (e.g., VM1):
 ```bash
 curl -fsSL https://binaries.nats.dev/nats-io/nats-server/v2@latest | sh
 ```
 
-Then start the server on VM1:
+Then start the server on that machine (here, VM1):
 ```bash
 nats-server --addr=<ip> --port=<port>
 ```
-Replace `<ip>` and `<port>` with the desired IP address and port number.
+Replace `<ip>` and `<port>` with VM1's IP address and a port number.
 
 ## 2. Install the Python client on both VMs
 
@@ -23,7 +23,7 @@ On both VMs:
 pip install nats-py
 ```
 
-The modern async client is called nats-py.
+This installs the NATS Python client library, which is required to run the example applications. It is based on `asyncio`, so make sure you have a Python version that supports it.
 
 ## 3. Take a look at the Python code 
 

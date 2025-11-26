@@ -54,6 +54,10 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
+
+
+
+
     try:
         asyncio.run(run(args.server_ip, args.port, args.size))
     except KeyboardInterrupt:
