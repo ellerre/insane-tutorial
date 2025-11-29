@@ -4,16 +4,21 @@ This repository containst the code example for the tutorial of the [INSANE middl
 
 ## Environment Setup
 
-We will provide .... to the attendant
+For the tutorial participants, we will provide each participants access to two VMs, so to enable them to do a true hands-on activity. The VMs will be equipped with... TODO 
+
 For those who cannot attend....
 
 ### NATS Example Application
 
-This example application shows how to use the NATS middleware to create a simple publisher-subscriber system and evaluate the latency. The application consists of two main components: a publisher that sends messages and a subscriber that receives them. All the material is in the [`nats`](nats) folder.
+This example application is the baseline for the tutorial. It shows how to use the NATS middleware to create a simple publisher-subscriber system and evaluate its latency. The application consists of two main components: a sender that periodically sends messages and a receiver that echoes them back. 
+
+Participants are invited to test the application, evaluate its performance, and look at the code. All the material is in the [`nats`](nats) folder.
 
 ### INSANE Example Application
 
-This example application demonstrates how to use the INSANE middleware to create a simple publisher-subscriber system and evaluate the latency. The application consists of two main components: a publisher that sends messages and a subscriber that receives them. All the material is in the [`insane`](insane) folder.
+This example application is the core of the tutorial. It demonstrates how to use the INSANE middleware to re-create the same application previously considered. The tutorial will guide the participants through the steps to modify the NATS example application to use the INSANE middleware instead, showing that with minimal and straightforward changes, they can switch from NATS to INSANE, thus maintaining the same application logic but leveraging the features and capabilities of the INSANE middleware, such as the portability across **various kernel-bypass stacks**.
 
-The tutorial will guide you through the steps to modify the NATS example application to use the INSANE middleware instead, showing that with minimal and straightforward changes, you can switch from NATS to INSANE, thus maintaining the same application logic but leveraging the features and capabilities of the INSANE middleware, such as the portability across **various kernel-bypass stacks**.
+This repository already contains the solution; during the tutorials, the transition between NATS and INSANE will be guided through an hands-on activity. All the material is in the [`insane`](insane) folder.
+
+
 

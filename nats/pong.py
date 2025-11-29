@@ -1,28 +1,25 @@
 import asyncio
 import argparse
-from nats.aio.client import Client as NATS
+import nats
 
 async def run(server_ip, port):
     url = f"nats://{server_ip}:{port}"
     print(f"Connecting to {url}...")
 
     # Connect to the NATS server
-    nc = NATS()
-    await nc.connect(url)
+    nc = await nats.connect(url)
     print("Connected. Listening for 'ping'...")
 
-    # Define the message handler for 'ping'
-    async def handle_ping(msg):
-        await nc.publish("pong", msg.data)
-
-    # Subscribe to 'ping' topic: every time a 'ping' is received,
-    # the handle_ping function is called which echos back the received msg
-    await nc.subscribe("ping", cb=handle_ping)
+    # Subscribe to 'ping' topic
+    await nc.subscribe("ping")
 
     # Do this forever, until interrupted
     try:
         while True:
-            await asyncio.sleep(1)
+            # Wait for incoming messages
+            msg = await sub.next_msg()
+            # Echo it back on the "pong" topic
+            await nc.publish("pong", msg.data)
     finally:
         await nc.close()
         print("Connection closed.")
