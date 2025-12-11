@@ -11,13 +11,13 @@ async def run(server_ip, port):
     print("Connected. Listening for 'ping'...")
 
     # Subscribe to 'ping' topic
-    await nc.subscribe("ping")
+    sub = await nc.subscribe("ping")
 
     # Do this forever, until interrupted
     try:
         while True:
             # Wait for incoming messages
-            msg = await sub.next_msg()
+            msg = await sub.next_msg(timeout=None)
             # Echo it back on the "pong" topic
             await nc.publish("pong", msg.data)
     finally:
