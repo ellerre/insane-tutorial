@@ -17,7 +17,7 @@ Replace `<ip>` and `<port>` with VM1's IP address and a port number.
 
 ## 2. Install the Python client on both VMs
 
-On both VMs:
+On both VMs, create a virtual environment, activate it, and then install the NATS Python client library:
 
 ```bash
 pip install nats-py
