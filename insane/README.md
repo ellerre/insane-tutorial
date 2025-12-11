@@ -4,7 +4,7 @@ This example shows a simple example that uses the INSANE middleware, by creating
 
 ## 1. Installing and Running the INSANE daemon
 
-TODO: ON BOTH MACHINES download the binary of the INSANE daemon
+On both VMs, download the binary package of INSANE, available at [this link](https://github.com/MMw-Unibo/INSANE/releases/download/v2.0.0/insanev2.0.0-linux-x86_64.zip), and unzip it. Alternatively, you can build INSANE from source by following the instructions in the [INSANE repository](https://github.com/MMw-Unibo/INSANE).
 
 Once you have the binaries, you must set up the configuration file. A sample configuration file named `nsnd.cfg` is provided in this repository: please update it according to your network setup. 
 In particular, while the socket-based plugins (UDP and TCP) only need the local ip address they will bind to, the DPDK plugins also need the **PCI address** of the network interface card (NIC) to use. Please refer to the [DPDK documentation](https://doc.dpdk.org/guides/tools/devbind.html) on how to find the PCI address of your NIC and how to set it up for DPDK usage. Note that INSANE has been tested with NVIDIA (mlx5) and a few Intel (i40e) NICs. Other NICs might work, but they are not officially supported.

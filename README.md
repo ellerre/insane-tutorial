@@ -4,9 +4,9 @@ This repository containst the code example for the tutorial of the [INSANE middl
 
 ## Environment Setup
 
-For the tutorial participants, we will provide each participants access to two VMs, so to enable them to do a true hands-on activity. The VMs will be equipped with... TODO 
+For the tutorial participants, we will give participants access to two VMs, already configured and set up for running the INSANE applications. 
 
-For those who cannot attend....
+For people that cannot attend the tutorial: INSANE can run on either bare-metal machines or VMs, as long as it has enough resources. We recommend at least 8 CPU cores and 8 GB of RAM if all the network plugins are going to be used concurrently. In case of VMs, it is important that the NIC is passed through to the VM using PCI passthrough (e.g., using VFIO). One can pass through the entire NIC or use SR-IOV to create Virtual Functions (VFs) that can be passed through to the VM. Support for virtualized (virtio-based) interfaces is not available at the moment, but it is planned for future releases. Similarly, support for local communication (2+ apps connecting to the same INSANE daemon on the same host) is not supported yet, so you will need two separate hosts (or VMs) for the tutorial.
 
 ### NATS Example Application
 
